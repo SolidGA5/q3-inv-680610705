@@ -55,7 +55,7 @@ export function ItemList() {
                 </TableCell>
                 <TableCell className="font-medium">{i.name}</TableCell>
                 <TableCell className="text-right">{i.quantity}</TableCell>
-                <TableCell className="text-right">฿{i.price}</TableCell>
+                <TableCell className="text-right">฿{i.price.toFixed(2)}</TableCell>
                 <TableCell className="text-right font-semibold">
                   ฿{(i.quantity * i.price).toFixed(2)}
                 </TableCell>

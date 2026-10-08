@@ -57,7 +57,7 @@ export function StudentInfo() {
       open={open}
       onOpenChange={setOpen}
     >
-      <DrawerTrigger render={<Button variant="secondary">Phuphing Chompubang</Button>} />
+      <DrawerTrigger render={<Button variant="secondary" className="bg-blue-500 text-white">Phuphing Chompubang</Button>} />
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>

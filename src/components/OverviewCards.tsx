@@ -42,7 +42,7 @@ export function OverviewCards() {
           <CardTitle className="text-sm font-medium">Total Units in Stock</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-green-700 font-bold">{totalUnit().toFixed(2)}</div>
+          <div className="text-2xl text-green-700 font-bold">{totalUnit()}</div>
         </CardContent>
       </Card>
     </div>

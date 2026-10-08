@@ -41,7 +41,8 @@ export function CategoryCards() {
           // Use Card component to display values by category
           <div>
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardHeader className="flex flex-col justify-between pb-2">
+                <CardTitle>{iconMap[category.label]}</CardTitle>
                 <CardTitle className="text-sm font-medium">{category.label}</CardTitle>
               </CardHeader>
               <CardContent>
