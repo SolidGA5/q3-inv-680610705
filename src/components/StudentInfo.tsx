@@ -27,42 +27,45 @@ export function StudentInfo() {
       onOpenChange={setOpen}
     >
       <DrawerTrigger render={<Button variant="secondary" className="bg-blue-500 text-white">Phuphing Chompubang</Button>} />
-      <DrawerContent>
-        <DrawerHeader>
+      <DrawerContent className="gap-5">
+        <div><DrawerHeader>
           <DrawerTitle className="font-bold text-xl">
             ข้อมูลนักศึกษา
           </DrawerTitle>
           <DrawerDescription>Student information</DrawerDescription>
         </DrawerHeader>
-        <Card className="w-auto">
-          <img className="w-auto"
-            src={img}
-          />
-          <CardHeader>
-            <CardTitle>Phuphing Chompubang</CardTitle>
-            <CardDescription>
-              นักศึกษา มช. วิศวะคอมพิวเตอร์
-            </CardDescription>
-            <div className="p-1 gap-1 flex flex-row">
-              <Badge>Hobbies</Badge>
-              <div>playing games , reading book</div>
-            </div>
-            <div className="p-1 gap-1 flex flex-row">
-              <Badge>Email</Badge>
-              <div>phuphing_chompubang@cmu.ac.th</div>
-            </div>
-            <div className="p-1 gap-5 flex flex-row">
-              <Badge>Social</Badge>
-              <div>https://www.facebook.com/ming
+        </div>
+        <div>
+          <Card size="default" className="mx-auto w-full max-w-xs">
+            <img
+              src={img}
+            />
+            <CardHeader>
+              <CardTitle>Phuphing Chompubang</CardTitle>
+              <CardDescription>
+                นักศึกษา มช. วิศวะคอมพิวเตอร์ ที่ทำแต่งานจนลืมไปเที่ยวกับเพื่อน
+              </CardDescription>
+              <div className="p-1 gap-1 flex flex-row">
+                <Badge>Hobbies</Badge>
+                <div>playing games , reading book</div>
               </div>
-            </div>
-          </CardHeader>
-          <CardFooter>
-            รหัสนักศึกษา: 680610705
-          </CardFooter>
-        </Card>
+              <div className="p-1 gap-1 flex flex-row">
+                <Badge>Email</Badge>
+                <div>phuphing_chompubang@cmu.ac.th</div>
+              </div>
+              <div className="p-1 gap-5 flex flex-row">
+                <Badge>Social</Badge>
+                <div>https://www.facebook.com/ming
+                </div>
+              </div>
+            </CardHeader>
+            <CardFooter>
+              รหัสนักศึกษา: 680610705
+            </CardFooter>
+          </Card>
+        </div>
         <DrawerFooter>
-          <DrawerClose render={<Button variant="outline">Cancel</Button>} />
+          <DrawerClose render={<Button variant="default">Close</Button>} />
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

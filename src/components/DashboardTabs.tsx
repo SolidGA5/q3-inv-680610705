@@ -6,7 +6,7 @@ import { CategoryCards } from "./CategoryCards"
 
 export function DashboardTabs() {
   return (
-    <Tabs defaultValue="preview">
+    <Tabs defaultValue="preview" className="h-50">
       <TabsList>
         <TabsTrigger value="overview">Overview</TabsTrigger>
         <TabsTrigger value="catagory">By Catagory</TabsTrigger>
