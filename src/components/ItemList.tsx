@@ -14,6 +14,10 @@ import { Trash } from "lucide-react";
 
 export function ItemList() {
   const { inventory } = useItemStore();
+  const { deleteInventoryItem } = useItemStore();
+  function haddleDelete(id: string) {
+    deleteInventoryItem(id)
+  }
 
   return (
     <Card>
@@ -43,26 +47,27 @@ export function ItemList() {
                   No products in stock yet.
                 </TableCell>
               </TableRow>
-            ) : (
+            ) : inventory.map(i =>
               // replace the following hardcoded row with the dynamic mapping of data items
               <TableRow>
                 <TableCell>
-                  <Badge variant="outline">Electronics</Badge>
+                  <Badge variant="outline">{i.category}</Badge>
                 </TableCell>
-                <TableCell className="font-medium">Apple Airpod 5</TableCell>
-                <TableCell className="text-right">10</TableCell>
-                <TableCell className="text-right">฿4000.00</TableCell>
+                <TableCell className="font-medium">{i.name}</TableCell>
+                <TableCell className="text-right">{i.quantity}</TableCell>
+                <TableCell className="text-right">฿{i.price}</TableCell>
                 <TableCell className="text-right font-semibold">
-                  ฿{(10 * 4000).toFixed(2)}
+                  ฿{(i.quantity * i.price).toFixed(2)}
                 </TableCell>
                 <TableCell className="text-muted-foreground">
-                  2026-10-05
+                  {i.date}
                 </TableCell>
                 <TableCell className="text-right">
                   <Button
                     className="text-white bg-red-500 hover:bg-red-600 text-white"
                     variant="ghost"
                     size="sm"
+                    onClick={() => haddleDelete(i.id)}
                   >
                     <Trash className="h-4 w-4" />
                     Delete

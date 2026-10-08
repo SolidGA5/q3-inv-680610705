@@ -25,7 +25,7 @@ export function AddItemDialog() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !quantity || !price) return;
-
+    addInventoryItem(name, Number(quantity), Number(price), category);
     // addInventoryItem(name, parseInt(quantity), parseFloat(price), category);
     setName("");
     setQuantity("");
@@ -37,8 +37,7 @@ export function AddItemDialog() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger
         render={<Button className="bg-indigo-500 hover:bg-indigo-600" />}
-      >
-        + Add Product
+      > + Add Product
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -101,6 +100,7 @@ export function AddItemDialog() {
           <Button
             type="submit"
             className="w-full bg-blue-500 hover:bg-blue-600"
+            onClick={handleSubmit}
           >
             Save Product
           </Button>
