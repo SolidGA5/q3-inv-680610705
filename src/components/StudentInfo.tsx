@@ -9,43 +9,12 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
+  DrawerDescription
 } from "@/components/ui/drawer"
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
 
-const deliveryTimes = [
-  {
-    value: "asap",
-    id: "delivery-asap",
-    label: "Standard delivery",
-    description: "25–35 min · Driver assigned now",
-    badge: "Fastest",
-  },
-  {
-    value: "5-00",
-    id: "delivery-5-00",
-    label: "5:00 PM – 5:15 PM",
-    description: "Prep starts at 4:45 PM",
-  },
-  {
-    value: "5-30",
-    id: "delivery-5-30",
-    label: "5:30 PM – 5:45 PM",
-    description: "Good if you're heading home",
-  },
-  {
-    value: "6-00",
-    id: "delivery-6-00",
-    label: "6:00 PM – 6:15 PM",
-    description: "Most popular · High demand",
-  },
-  {
-    value: "6-30",
-    id: "delivery-6-30",
-    label: "6:30 PM – 6:45 PM",
-    description: "Last slot before kitchen closes",
-  },
-]
+
 
 export function StudentInfo() {
   const [open, setOpen] = React.useState(false)
@@ -60,14 +29,13 @@ export function StudentInfo() {
       <DrawerTrigger render={<Button variant="secondary" className="bg-blue-500 text-white">Phuphing Chompubang</Button>} />
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>
+          <DrawerTitle className="font-bold text-xl">
             ข้อมูลนักศึกษา
           </DrawerTitle>
-          Student information
+          <DrawerDescription>Student information</DrawerDescription>
         </DrawerHeader>
-        <Card className="relative mx-auto w-full max-w-sm pt-0">
-          <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-          <img
+        <Card className="w-auto">
+          <img className="w-auto"
             src={img}
           />
           <CardHeader>
@@ -75,17 +43,18 @@ export function StudentInfo() {
             <CardDescription>
               นักศึกษา มช. วิศวะคอมพิวเตอร์
             </CardDescription>
-            <div className="p-1 gap-5">
+            <div className="p-1 gap-1 flex flex-row">
               <Badge>Hobbies</Badge>
-              playing games
+              <div>playing games , reading book</div>
             </div>
-            <div className="p-1 gap-5">
+            <div className="p-1 gap-1 flex flex-row">
               <Badge>Email</Badge>
-              phuphing_chompubang@cmu.ac.th
+              <div>phuphing_chompubang@cmu.ac.th</div>
             </div>
-            <div className="p-1 gap-5">
+            <div className="p-1 gap-5 flex flex-row">
               <Badge>Social</Badge>
-              https://www.facebook.com/ming
+              <div>https://www.facebook.com/ming
+              </div>
             </div>
           </CardHeader>
           <CardFooter>
